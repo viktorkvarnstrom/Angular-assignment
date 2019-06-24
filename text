@@ -1,0 +1,91 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+  <div class="login-box">
+    <h1>Register</h1>
+    <div class="textbox">
+      <input type="text" formControlName="firstname" placeholder="Firstname">
+    </div>
+
+    <div class="textbox">
+      <input type="text" formControlName="lastname" placeholder="Lastname">
+    </div>
+
+    <div class="textbox">
+      <input type="text" formControlName="addressline" placeholder="addressline">
+    </div>
+
+    <div class="textbox">
+      <input type="text" formControlName="zipcode" placeholder="Zipcode">
+    </div>
+
+    <div class="textbox">
+      <input type="text" formControlName="city" placeholder="City">
+    </div>
+
+    <div class="textbox">
+      <input type="text" formControlName="email" placeholder="Email">
+    </div>
+
+    <div class="textbox">
+      <input type="password" formControlName="password" placeholder="Password">
+    </div>
+
+    <input type="submit" class="btn" value="Register">
+  </div>
+</form>
+
+
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './start.component.html',
+  styleUrls: ['./start.component.css']
+})
+export class HeaderComponent implements OnInit {
+
+  constructor(private router: Router, private cookieService: CookieService) { }
+  
+  isLoggedIn: boolean = this.cookieService.check('isLoggedIn')
+
+  ngOnInit() {
+
+  }
+
+  logout() {
+    this.isLoggedIn = false;
+    this.cookieService.deleteAll()
+    this.router.navigateByUrl('/')
+  }
+
+}
+
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-start',
+  templateUrl: './start.component.html',
+  styleUrls: ['./start.component.css']
+})
+export class StartComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'assignment';
+}

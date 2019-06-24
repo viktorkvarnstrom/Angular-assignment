@@ -1,0 +1,43 @@
+<app-header></app-header>
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+  <div class="login-box">
+    <h1>Register</h1>
+    <div class="textbox">
+      <input type="text" formControlName="firstname" placeholder="Firstname">
+    </div>
+
+    <div class="textbox">
+      <input type="text" formControlName="lastname" placeholder="Lastname">
+    </div>
+
+    <div class="textbox">
+      <input type="text" formControlName="dayofbirth" placeholder="Day of birth">
+    </div>
+
+    <div class="textbox">
+      <input type="text" formControlName="contry" placeholder="contry">
+    </div>
+
+    <div class="textbox">
+      <input type="text" formControlName="addressline" placeholder="addressline">
+    </div>
+
+    <div class="textbox">
+      <input type="text" formControlName="zipcode" placeholder="Zipcode">
+    </div>
+
+    <div class="textbox">
+      <input type="text" formControlName="city" placeholder="City">
+    </div>
+
+    <div class="textbox">
+      <input type="text" formControlName="email" placeholder="Email">
+    </div>
+
+    <div class="textbox">
+      <input type="password" formControlName="password" placeholder="Password">
+    </div>
+
+    <input type="submit" class="btn" value="Register">
+  </div>
+</form>
